@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fadeblack - Customize Your Item</title>
+    <link rel="stylesheet" href="styles/customize.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">FADEBLACK</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="customize.html">Customize</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="customize">
+            <h1>Create Your Custom Item</h1>
+
+            <form id="customize-form">
+                <label for="item-type">Select Item Type:</label>
+                <select id="item-type" name="item-type">
+                    <option value="hoodie">Hoodie</option>
+                    <option value="t-shirt">T-Shirt</option>
+                    <option value="cap">Cap</option>
+                </select>
+
+                <label for="color">Choose Color:</label>
+                <input type="color" id="color" name="color" value="#000000">
+
+                <label for="design">Upload Design (optional):</label>
+                <input type="file" id="design" name="design" accept="image/*">
+
+                <label for="text">Add Custom Text:</label>
+                <input type="text" id="text" name="text" placeholder="Your text here">
+
+                <button type="button" id="preview-button">Preview</button>
+                <button type="submit">Add to Cart</button>
+            </form>
+
+            <div id="preview-container">
+                <h2>Preview:</h2>
+                <canvas id="item-preview" width="300" height="300"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fadeblack. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/customize.js"></script>
+</body>
+</html>
