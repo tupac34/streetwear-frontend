@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FadeBlack | Product</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="darkmode.js" defer></script>
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <input type="checkbox" id="darkModeSwitch">
+    <label for="darkModeSwitch">Dark Mode</label>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="customise.html">Customise</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="product.html" class="active">Products</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+      <h1>Our Featured Streetwear Products</h1>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/tshirt.png" alt="T-shirt">
+          <h2>FadeBlack T-Shirt</h2>
+          <p>ZAR 250.00</p>
+          <button onclick="addToWishlist('FadeBlack T-Shirt')">Add to Wishlist</button>
+        </div>
+        <div class="product-card">
+          <img src="images/hoodie.png" alt="Hoodie">
+          <h2>FadeBlack Hoodie</h2>
+          <p>ZAR 400.00</p>
+          <form class="product-form">
+            <label for="size">Size:</label>
+            <select id="size" name="size" required>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="xl">XL</option><button onclick="addToWishlist('FadeBlack Hoodie')">Add to Wishlist</button>
+        </div>
+        <div class="product-card">
+          <img src="images/cap.png" alt="Cap">
+          <h2>FadeBlack Cap</h2>
+          <p>ZAR 250.00</p>
+          <button onclick="addToWishlist('FadeBlack Cap')">Add to Wishlist</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+      <h2>Customer Reviews</h2>
+      <form id="reviewForm" onsubmit="submitReview(event)">
+        <input type="text" id="reviewerName" placeholder="Your Name" required>
+        <textarea id="reviewContent" placeholder="Write a review..." required></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
+      <div id="reviewsList">
+        <p>No reviews yet. Be the first to leave one!</p>
+      </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="comments">
+      <h2>Leave a Comment</h2>
+      <form id="commentForm" onsubmit="submitComment(event)">
+        <input type="text" id="commenterName" placeholder="Your Name" required>
+        <textarea id="commentContent" placeholder="Write your comment..." required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+      <div id="commentsList">
+        <p>No comments yet. Be the first to post one!</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 FadeBlack. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">X</a>
+      <a href="#">TikTok</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Wishlist functionality
+    function addToWishlist(item) {
+      alert(`${item} has been added to your wishlist!`);
+    }
+
+    // Review functionality
+    function submitReview(event) {
+      event.preventDefault();
+      const name = document.getElementById('reviewerName').value;
+      const content = document.getElementById('reviewContent').value;
+      const reviewsList = document.getElementById('reviewsList');
+      const review = document.createElement('p');
+      review.innerHTML = `<strong>${name}</strong>: ${content}`;
+      reviewsList.appendChild(review);
+      document.getElementById('reviewForm').reset();
+    }
+
+    // Comment functionality
+    function submitComment(event) {
+      event.preventDefault();
+      const name = document.getElementById('commenterName').value;
+      const content = document.getElementById('commentContent').value;
+      const commentsList = document.getElementById('commentsList');
+      const comment = document.createElement('p');
+      comment.innerHTML = `<strong>${name}</strong>: ${content}`;
+      commentsList.appendChild(comment);
+      document.getElementById('commentForm').reset();
+    }
+  </script>
+</body>
+</html>
