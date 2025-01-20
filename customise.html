@@ -3,118 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FadeBlack | Customise Your Design</title>
+  <title>Customize Your Product</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="main-header">
+  <header class="header">
     <div class="logo">
-      <a href="index.html"><img src="images/logo.png" alt="FadeBlack Logo"></a>
+      <img src="images/logo.png" alt="FadeBlack Logo">
     </div>
-    <nav>
+    <nav class="navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="shop.html">Shop</a></li>
-        <li><a href="customise.html" class="active">Customise</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Customisation Section -->
-  <section class="customisation">
-    <h1>Design Your Own Style</h1>
-    <p>Download the PSD template, edit it, and upload your unique design to see it come to life!</p>
-    <div class="download-upload">
-      <!-- Download PSD Template -->
-      <a href="downloads/custom-tshirt.psd" download class="btn">Download PSD Template</a>
-
-      <!-- Upload Edited PSD -->
-      <form action="upload.php" method="post" enctype="multipart/form-data" class="upload-form">
-        <label for="file">Upload Your Edited PSD:</label>
-        <input type="file" name="file" id="file" accept=".psd">
-        <button type="submit" class="btn">Upload Design</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- How It Works Section -->
-  <section class="how-it-works">
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <h3>1. Download Template</h3>
-        <p>Get our high-quality PSD file designed for easy customization.</p>
-      </div>
-      <div class="step">
-        <h3>2. Create Your Design</h3>
-        <p>Use Photoshop or any PSD editor to bring your ideas to life.</p>
-      </div>
-      <div class="step">
-        <h3>3. Upload Your Work</h3>
-        <p>Submit your customized design and let us handle the rest.</p>
-      </div>
-    </div>
-  </section>
-  <iframe src="https://www.photopea.com" width="100%" height="600px"></iframe>
-  <input type="file" id="design-upload" accept="image/*">
-  <button onclick="openPhotopea()">Open Design in Photopea</button>
-  <script>
-    function openPhotopea() {
-      var fileInput = document.getElementById('design-upload');
-      var file = fileInput.files[0];
+  <main class="main-content">
+    <section class="customization">
+      <h1>Customize Your Favorite Product</h1>
+      <p>Download our design templates and create your unique styles. Once you're done, upload your design to get it printed!</p>
       
-      if (file) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-          // Open Photopea and load the image
-          var photopeaIframe = document.querySelector('iframe');
-          photopeaIframe.src = 'https://www.photopea.com/#' + e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    }
-  </script>
-   
-  <!-- Inspiration Gallery -->
-  <section class="inspiration-gallery">
-    <h2>Get Inspired</h2>
-    <div class="gallery">
-      <img src="images/inspiration1.png" alt="Custom Design Inspiration 1">
-      <img src="images/inspiration2.png" alt="Custom Design Inspiration 2">
-      <img src="images/inspiration3.png" alt="Custom Design Inspiration 3">
-    </div>
-  </section>
+      <div class="downloads">
+        <h2>Download Design Templates</h2>
+        <p>Choose a product to start customizing:</p>
+        <ul>
+          <li>
+            <a href="https://www.dropbox.com/scl/fi/8ls91sica5166080hejr7/custom-tshirt.psd?rlkey=em5ryqg9g7ado1byg7v02ab30&st=ddri2m9d&dl=1" download>
+              <img src="images/tshirt-icon.png" alt="T-Shirt Icon"> Download T-Shirt PSD
+            </a>
+          </li>
+          <li>
+            <a href="https://www.dropbox.com/scl/fi/4rn2zbtqodubcj5boozwp/custom-cap.psd?rlkey=3dikjjr91zhojrtis0nxwc760&st=crfd2l27&dl=1" download>
+              <img src="images/cap-icon.png" alt="Cap Icon"> Download Cap PSD
+            </a>
+          </li>
+          <li>
+            <a href="https://www.dropbox.com/scl/fi/vdh2nez8ar5ofo1nwf3qm/custom-hoodie.psd?rlkey=ox6a1joizu4c6v544clhxifj1&st=vv9ihhzx&dl=1" download>
+              <img src="images/hoodie-icon.png" alt="Hoodie Icon"> Download Hoodie PSD
+            </a>
+          </li>
+        </ul>
+      </div>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <h2>What Designers Are Saying</h2>
-    <div class="testimonial-slider">
-      <div class="testimonial">
-        <p>"This customization tool is amazing! It gave me complete control over my designs."</p>
-        <h4>- Jordan P.</h4>
+      <div class="upload-section">
+        <h2>Upload Your Design</h2>
+        <p>After customizing, upload your design below:</p>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <label for="designUpload">Choose your file:</label>
+          <input type="file" id="designUpload" name="designUpload" accept=".psd, .png, .jpg" required>
+          <button type="submit">Upload</button>
+        </form>
       </div>
-      <div class="testimonial">
-        <p>"I loved how simple it was to create and upload my own designs. Great experience!"</p>
-        <h4>- Sam T.</h4>
-      </div>
-      <div class="testimonial">
-        <p>"FadeBlack made it easy to turn my concepts into reality. Highly recommend!"</p>
-        <h4>- Alex M.</h4>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
+      <div class="comments-section">
+        <h2>What Others Are Saying</h2>
+        <div class="comment">
+          <p><strong>Alex:</strong> "The templates are amazing and easy to use! My hoodie turned out great!"</p>
+        </div>
+        <div class="comment">
+          <p><strong>Jordan:</strong> "Love the customization options! Can't wait to order more designs."</p>
+        </div>
+        <div class="comment">
+          <p><strong>Taylor:</strong> "The upload process was seamless, and the quality is top-notch!"</p>
+        </div>
+        <form class="comment-form" action="/submit-comment" method="POST">
+          <label for="userComment">Add your comment:</label>
+          <textarea id="userComment" name="userComment" rows="4" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
     <p>&copy; 2024 FadeBlack. All rights reserved.</p>
-    <div class="social-links">
-      <a href="#">Instagram</a>
-      <a href="#">X</a>
-      <a href="#">TikTok</a>
-    </div>
+    <p>Follow us on:
+      <a href="#">Instagram</a> |
+      <a href="#">X</a> |
+      <a href="#">Facebook</a>
+    </p>
   </footer>
 </body>
 </html>
