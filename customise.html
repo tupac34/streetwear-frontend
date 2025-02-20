@@ -3,87 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customize Your Product</title>
-  <link rel="stylesheet" href="style.css">
+  <title>FadeBlack - Customize</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .customization-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    h1, h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 2px;
+    }
+    .download-list {
+      list-style: none;
+      padding: 0;
+    }
+    .download-list li {
+      margin: 10px 0;
+    }
+    .btn {
+      background: white;
+      color: black;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease-in-out;
+    }
+    .btn:hover {
+      background: gold;
+    }
+    .footer {
+      margin-top: 40px;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">
-      <img src="images/logo.png" alt="FadeBlack Logo">
-    </div>
-    <nav class="navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <header>
+    <h1>FadeBlack - Customize</h1>
   </header>
-
-  <main class="main-content">
-    <section class="customization">
-      <h1>Customize Your Favorite Product</h1>
-      <p>Download our design templates and create your unique styles. Once you're done, upload your design to get it printed!</p>
-      
-      <div class="downloads">
-        <h2>Download Design Templates</h2>
-        <p>Choose a product to start customizing:</p>
-        <ul>
-          <li>
-            <a href="https://www.dropbox.com/scl/fi/8ls91sica5166080hejr7/custom-tshirt.psd?rlkey=em5ryqg9g7ado1byg7v02ab30&st=ddri2m9d&dl=1" download>
-              <img src="images/tshirt-icon.png" alt="T-Shirt Icon"> Download T-Shirt PSD
-            </a>
-          </li>
-          <li>
-            <a href="https://www.dropbox.com/scl/fi/4rn2zbtqodubcj5boozwp/custom-cap.psd?rlkey=3dikjjr91zhojrtis0nxwc760&st=crfd2l27&dl=1" download>
-              <img src="images/cap-icon.png" alt="Cap Icon"> Download Cap PSD
-
-          <li>
-            <a href="https://www.dropbox.com/scl/fi/vdh2nez8ar5ofo1nwf3qm/custom-hoodie.psd?rlkey=ox6a1joizu4c6v544clhxifj1&st=vv9ihhzx&dl=1" download>
-              <img src="images/hoodie-icon.png" alt="Hoodie Icon"> Download Hoodie PSD
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="upload-section">
-        <h2>Upload Your Design</h2>
-        <p>After customizing, upload your design below:</p>
-        <form action="/upload" method="POST" enctype="multipart/form-data">
-          <label for="designUpload">Choose your file:</label>
-          <input type="file" id="designUpload" name="designUpload" accept=".psd, .png, .jpg" required>
-          <button type="submit">Upload</button>
-        </form>
-      </div>
-
-      <div class="comments-section">
-        <h2>What Others Are Saying</h2>
-        <div class="comment">
-          <p><strong>Alex:</strong> "The templates are amazing and easy to use! My hoodie turned out great!"</p>
-        </div>
-        <div class="comment">
-          <p><strong>Jordan:</strong> "Love the customization options! Can't wait to order more designs."</p>
-        </div>
-        <div class="comment">
-          <p><strong>Taylor:</strong> "The upload process was seamless, and the quality is top-notch!"</p>
-        </div>
-        <form class="comment-form" action="/submit-comment" method="POST">
-          <label for="userComment">Add your comment:</label>
-          <textarea id="userComment" name="userComment" rows="4" required></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
+  <section class="customization-container">
+    <h1>Customize Your Favorite Product</h1>
+    <p>Download our templates, create your designs, and upload them to get them printed.</p>
+    
+    <h2>Download Design Templates</h2>
+    <ul class="download-list">
+      <li><a href="#" class="btn">Download T-Shirt PSD</a></li>
+      <li><a href="#" class="btn">Download Cap PSD</a></li>
+      <li><a href="#" class="btn">Download Hoodie PSD</a></li>
+    </ul>
+    
+    <h2>Upload Your Design</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="designUpload" accept=".psd, .png, .jpg" required>
+      <button type="submit" class="btn">Upload</button>
+    </form>
+    
+    <h2>What Others Are Saying</h2>
+    <p><strong>Alex:</strong> "Loved the templates! My hoodie turned out amazing!"</p>
+    <p><strong>Jordan:</strong> "Great customization options! Can't wait for my next order."</p>
+    <form action="/submit-comment" method="POST">
+      <textarea name="userComment" rows="4" required></textarea>
+      <button type="submit" class="btn">Submit Comment</button>
+    </form>
+  </section>
   <footer class="footer">
-    <p>&copy; 2024 FadeBlack. All rights reserved.</p>
-    <p>Follow us on:
-      <a href="#">Instagram</a> |
-      <a href="#">X</a> |
-      <a href="#">Facebook</a>
-    </p>
+    <p>&copy; 2025 FadeBlack. All rights reserved.</p>
   </footer>
 </body>
 </html>
+

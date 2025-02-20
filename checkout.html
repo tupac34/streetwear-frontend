@@ -34,9 +34,15 @@
                     <!-- Cart items will be dynamically populated using JavaScript -->
                 </div>
                 <p class="total">Total: R<span id="total-price">0.00</span></p>
+                
+                <div class="coupon">
+                    <input type="text" id="coupon-code" placeholder="Enter coupon code">
+                    <button onclick="applyCoupon()">Apply</button>
+                </div>
             </div>
 
             <div id="paypal-button-container"></div>
+            <div class="loading" id="loading">Processing payment...</div>
         </div>
     </section>
 
@@ -75,6 +81,7 @@
         // PayPal integration
         paypal.Buttons({
             createOrder: function (data, actions) {
+                document.getElementById('loading').style.display = 'block';
                 return actions.order.create({
                     purchase_units: [{
                         amount: {

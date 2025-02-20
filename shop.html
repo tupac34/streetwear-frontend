@@ -3,65 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FadeBlack | Shop</title>
-    <link rel="stylesheet" href="style.css">
+    <title>FadeBlack - Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .shop-header {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 50px;
+            margin: 20px 0;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .product {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product h3 {
+            margin: 10px 0;
+            font-size: 22px;
+        }
+        .product p {
+            font-size: 18px;
+        }
+        .buy-btn {
+            display: inline-block;
+            background: white;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+        .buy-btn:hover {
+            background: gold;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="FadeBlack Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html" class="active">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="customize.html">Customize</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <h1 class="shop-header">Shop Our Collection</h1>
     </header>
-
-    <main>
-        <section class="product-list">
-            <h1>Shop Our Collection</h1>
-            <div class="product-grid">
-                <div class="product">
-                    <img src="images/tshirt1.jpg" alt="T-Shirt">
-                    <h3>Classic T-Shirt</h3>
-                    <p>ZAR 299.99</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="images/hoodie1.jpg" alt="Hoodie">
-                    <h3>Signature Hoodie</h3>
-                    <p>ZAR 499.99</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="images/cap1.jpg" alt="Cap">
-                    <h3>Street Cap</h3>
-                    <p>ZAR 299.99</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="images/tshirt2.png" alt="T-Shirt">
-                    <h3>Graphic T-Shirt</h3>
-                    <p>ZAR 349</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="images/hoodie.png" alt="Hoodie">
-                    <h3>Custom DTF Hoodie</h3>
-                    <p>ZAR 599.99</p>
-                    <button>Add to Cart</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
+    <section class="product-grid">
+        <div class="product"><img src="hoodie.png" alt="Hoodie"><h3>Black Hoodie</h3><p>R399.99</p><a href="#" class="buy-btn">Add to Cart</a></div>
+        <div class="product"><img src="cap.png" alt="Cap"><h3>Streetwear Cap</h3><p>R199.99</p><a href="#" class="buy-btn">Add to Cart</a></div>
+        <div class="product"><img src="cargo-black.png" alt="Black Cargo Pants"><h3>Cargo Pants</h3><p>R299.99</p><a href="#" class="buy-btn">Add to Cart</a></div>
+        <div class="product"><img src="White-tshirt.png" alt="White T-Shirt"><h3>White T-Shirt</h3><p>R299.99</p><a href="#" class="buy-btn">Add to Cart</a></div>
+        <div class="product"><img src="tshirt.png" alt="T-Shirt Black"><h3>Black T-Shirt</h3><p>R299.99</p><a href="#" class="buy-btn">Add to Cart</a></div>
+        <div class="product"><img src="sweatpants.png" alt="Sweatpants"><h3>Sweatpants</h3><p>R499.99</p><a href="#" class="buy-btn">Add to Cart</a></div>
+        <div class="product"><img src="white-hoodie2.png" alt="White Hoodie"><h3>White Hoodie</h3><p>R399.99</p><a href="#" class="buy-btn">Add to Cart</a></div>
+    </section>
     <footer>
-        <p>&copy; 2024 FadeBlack. All rights reserved.</p>
+        <p>&copy; 2025 FadeBlack. All rights reserved.</p>
     </footer>
 </body>
 </html>

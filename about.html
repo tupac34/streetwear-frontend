@@ -1,60 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - FadeBlack</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FadeBlack - About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero {
+            background-image: url('about-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 50px;
+            margin: 0;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 40px 0;
+        }
+        .team-member {
+            max-width: 250px;
+            text-align: center;
+        }
+        .team-member img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .social-media img {
+            width: 30px;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">
-      <img src="images/logo.png" alt="FadeBlack Logo">
-    </div>
-    <nav class="navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="customize.html">Customize</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="main-content">
-    <section class="about-us">
-      <h1>About FadeBlack</h1>
-      <p>Welcome to FadeBlack, the ultimate destination for premium streetwear enthusiasts. We combine bold designs, high-quality materials, and a passion for urban culture to create apparel that stands out in every crowd.</p>
-
-      <div class="our-story">
-        <h2>Our Story</h2>
-        <p>FadeBlack was born out of a love for self-expression and individuality. Starting as a small design project, we quickly grew into a global brand that empowers customers to make their own statement through fashion.</p>
-      </div>
-
-      <div class="our-mission">
-        <h2>Our Mission</h2>
-        <p>Our mission is to inspire creativity and confidence in everyone who wears FadeBlack. We believe that fashion is more than clothing—it's a lifestyle, a form of art, and a way to connect with others.</p>
-      </div>
-
-      <div class="why-choose-us">
-        <h2>Why Choose FadeBlack?</h2>
-        <ul>
-          <li>Exclusive, original designs</li>
-          <li>Top-quality fabrics and materials</li>
-          <li>Customizable options for personalized style</li>
-          <li>Commitment to sustainability and ethical practices</li>
-        </ul>
-      </div>
+    <header>
+        <h1>FadeBlack Streetwear</h1>
+    </header>
+    <section class="hero">
+        <h1>About Us</h1>
     </section>
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2024 FadeBlack. All rights reserved.</p>
-    <p>Follow us on:
-      <a href="#">Instagram</a> |
-      <a href="#">Twitter</a> |
-      <a href="#">Facebook</a>
-    </p>
-  </footer>
+    <section class="content">
+        <p>FadeBlack is more than just a brand. We are a movement, bringing you bold streetwear that makes a statement. 
+        Designed for those who stand out, our collections reflect urban culture, creativity, and authenticity.</p>
+    </section>
+    <section class="team">
+        <div class="team-member">
+            <img src="team1.jpg" alt="Founder">
+            <h3>Saeid</h3>
+            <p>Founder & CEO</p>
+        </div>
+        <div class="team-member">
+            <img src="team2.jpg" alt="Lead Designer">
+            <h3>Lereko</h3>
+            <p>Lead Designer</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 FadeBlack Streetwear</p>
+        <div class="social-media">
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+        </div>
+    </footer>
 </body>
 </html>
