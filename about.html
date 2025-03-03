@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FadeBlack - About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+       /* General mobile styles */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* Center content */
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Navigation Menu */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Product Grid */
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    /* Images */
+    .product img {
+        max-width: 100%;
+        height: auto;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    /* Buttons */
+    .shop-now-btn {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+ body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero {
+            background-image: url('about-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 50px;
+            margin: 0;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 40px 0;
+        }
+        .team-member {
+            max-width: 250px;
+            text-align: center;
+        }
+        .team-member img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .social-media img {
+            width: 30px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FadeBlack Streetwear</h1>
+    </header>
+    <section class="hero">
+        <h1>About Us</h1>
+    </section>
+    <section class="content">
+        <p>FadeBlack is more than just a brand. We are a movement, bringing you bold streetwear that makes a statement. 
+        Designed for those who stand out, our collections reflect urban culture, creativity, and authenticity.</p>
+    </section>
+    <section class="team">
+        <div class="team-member">
+            <img src="team1.jpg" alt="Founder">
+            <h3>Saeid</h3>
+            <p>Founder & CEO</p>
+        </div>
+        <div class="team-member">
+            <img src="team2.jpg" alt="Lead Designer">
+            <h3>Lereko</h3>
+            <p>Lead Designer</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 FadeBlack Streetwear</p>
+        <div class="social-media">
+            <a href="#"><img src="assets/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="assets/images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="assets/images/facebook.png" alt="Facebook"></a>
+        </div>
+    </footer>
+</body>
+</html>

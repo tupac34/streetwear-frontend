@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FadeBlack - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+       /* General mobile styles */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* Center content */
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Navigation Menu */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Product Grid */
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    /* Images */
+    .product img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Buttons */
+    .shop-now-btn {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+ .preloader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loader {
+            border: 6px solid #fff;
+            border-top: 6px solid #FFD700;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        body {
+            background-color: #0c242c;
+            color: white; /* Ensure text is readable */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        } 
+        .hero img {
+            width: 100%;
+            max-width: 500px; /* Adjust based on product image size */
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+         .dark-mode {
+            background-color: white;
+            color: black;
+        }
+        .logo-container {
+            text-align: right;
+            padding: 20px;
+        }
+        .logo {
+            width: 150px;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: #000000;
+            padding: 10px 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            transition: color 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .shop-now-btn {
+            background-color: white;
+            color: #000000;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+        }
+        .shop-now-btn:hover {
+            background-color: #FFD700;
+            transform: scale(1.1);
+        }
+        .featured-products {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .product:hover img {
+            transform: scale(1.15);
+        }
+        .toggle-dark-mode {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            color: #000000;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+ </style>
+</head>
+<script>
+    document.getElementById('login-btn').addEventListener('click', function () {
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        if (email && password) {
+            alert('Login Successful!');
+        } else {
+            alert('Please enter valid credentials.');
+        }
+    });
+</script>
+<script>
+    window.addEventListener('load', function () {
+        document.querySelector('.preloader').style.display = 'none';
+    });
+</script>
+<script>
+    document.getElementById('login-btn').addEventListener('click', function () {
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        if (email && password) {
+            alert('Login Successful!');
+        } else {
+            alert('Please enter valid credentials.');
+        }
+    });
+</script>
+<body>
+    <div class="auth-container">
+        <input type="email" id="email" placeholder="Enter Email">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button id="login-btn">Login</button>
+    </div>
+     <div class="preloader">
+        <div class="loader"></div>
+    </div>
+     <header>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="FadeBlack Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="customise.html">Customize</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="order.html">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <img src="assets/images/hero-image.png" alt="Streetwear Collection">
+        <h2>Welcome to FadeBlack</h2>
+        <p>Explore our latest streetwear collection and customize your own style.</p>
+        <a href="shop.html" class="shop-now-btn">Shop Now</a>
+    </section>
+    
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="assets/images/hoodie1.png" alt="Hoodie">
+                <h3>Hoodie</h3>
+                <p>R399.99</p>
+            </div>
+            <div class="product">
+                <img src="assets/images/cap.png" alt="Cap">
+                <h3>Cap</h3>
+                <p>R199.99</p>
+            </div>
+            <div class="product">
+                <img src="assets/images/white-hoodie.png" alt="hoodie">
+                <h3>hoodie</h3>
+                <p>R399.99</p>
+            </div>
+            <div class="product">
+                <img src="assets/images/2.png" alt="tshirt">
+                <h3>t-shirt</h3>
+                <p>R299.99</p>
+            </div>
+       <div class="product">
+                <img src="assets/images/White-tshirt.png" alt="tshirt">
+                <h3>t-shirt</h3>
+                <p>R299.99</p>
+            </div>
+    <div class="product">
+                <img src="assets/images/8.png" alt="tshirt">
+                <h3>t-shirt</h3>
+                <p>R299.99</p>
+            </div> </section> 
+    <footer>
+        <p>&copy; 2025 FadeBlack. All rights reserved.</p>
+        <div class="social-media">
+           <a href="https://www.instagram.com/fade_black12" target="_blank" class="instagram-link">
+  <i class="fa-brands fa-instagram"></i> Follow us on Instagram
+</a>
+
+<style>
+  .instagram-link {
+    font-size: 18px;
+    color: #E4405F;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .instagram-link:hover {
+    color: #C13584;
+  }
+
+  .fa-instagram {
+    margin-right: 10px;
+  }
+</style>
+       <a href="https://www.tiktok.com/@fadeblack_" target="_blank" class="tiktok-link">
+  <i class="fa fa-tiktok"></i> Follow us on TikTok
+</a>
+
+<style>
+  .tiktok-link {
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .tiktok-link:hover {
+    color: #000;
+  }
+
+  .fa-tiktok {
+    margin-right: 10px;
+  }
+</style>
+           <a href="https://www.facebook.com/profile.php?id=61566816211953" target="_blank" class="facebook-link">
+  <i class="fa-brands fa-facebook"></i> Follow us on Facebook
+</a>
+
+<style>
+  .facebook-link {
+    font-size: 18px;
+    color: #f1f2f4;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .facebook-link:hover {
+    color: #f3f6f9;
+  }
+
+  .fa-facebook {
+    margin-right: 10px;
+  }
+</style>
+        </div>
+    </footer>
+    
+    <button class="toggle-dark-mode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>

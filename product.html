@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FadeBlack - Products</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+     /* General mobile styles */
+@media screen and (max-width: 768px) {
+  body {
+      font-size: 16px;
+      padding: 10px;
+  }
+
+  /* Center content */
+  .container {
+      width: 100%;
+      padding: 0 10px;
+  }
+
+  /* Navigation Menu */
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  nav ul li {
+      display: block;
+      text-align: center;
+      width: 100%;
+  }
+
+  /* Product Grid */
+  .product-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+  }
+
+  /* Images */
+  .product img {
+      max-width: 100%;
+      height: auto;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+  /* Buttons */
+  .shop-now-btn {
+      font-size: 18px;
+      padding: 10px 20px;
+  }
+}
+body {
+        background-color: #0b0b0aff;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        }
+        .product-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+          padding: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .product {
+          transform: scale(1.2);
+        }
+         body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+          width: 100%;
+          border-radius: 10px;
+          transition: transform 0.3s ease-in-out;
+          }
+          .product img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+          }
+        .product-price {
+            font-size: 22px;
+            margin: 10px 0;
+            color: gold;
+        }
+        .product-description {
+            font-size: 16px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        .buy-btn {
+            display: inline-block;
+            background: white;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s ease-in-out, transform 0.2s;
+        }
+        .buy-btn:hover {
+            background: gold;
+            transform: scale(1.1);
+        }
+        .footer {
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <input type="checkbox" id="darkModeSwitch">
+    <label for="darkModeSwitch">Dark Mode</label>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="customise.html">Customise</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="product.html" class="active">Products</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+      <h1>Our Featured Streetwear Products</h1>
+      <div class="product-grid">
+product-card">
+
+          <img src="assets/images/tshirt.png" alt="T-shirt">
+          <h2>FadeBlack T-Shirt</h2>
+          <p>ZAR 250.00</p>
+          <button onclick="addToWishlist('FadeBlack T-Shirt')">Add to Wishlist</button>
+        </div>
+        <div class="product-card">
+          <img src="assets/images/hoodie1.png" alt="Hoodie">
+          <h2>FadeBlack Hoodie</h2>
+          <p>ZAR 400.00</p>
+          <form class="product-form">
+            <label for="size">Size:</label>
+            <select id="size" name="size" required>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="xl">XL</option><button onclick="addToWishlist('FadeBlack Hoodie')">Add to Wishlist</button>
+        </div>
+        <div class="product-card">
+          <img src="assets/images/cap.png" alt="Cap">
+          <h2>FadeBlack Cap</h2>
+          <p>ZAR 250.00</p>
+          <button onclick="addToWishlist('FadeBlack Cap')">Add to Wishlist</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+      <h2>Customer Reviews</h2>
+      <form id="reviewForm" onsubmit="submitReview(event)">
+        <input type="text" id="reviewerName" placeholder="Your Name" required>
+        <textarea id="reviewContent" placeholder="Write a review..." required></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
+      <div id="reviewsList">
+        <p>No reviews yet. Be the first to leave one!</p>
+      </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="comments">
+      <h2>Leave a Comment</h2>
+      <form id="commentForm" onsubmit="submitComment(event)">
+        <input type="text" id="commenterName" placeholder="Your Name" required>
+        <textarea id="commentContent" placeholder="Write your comment..." required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+      <div id="commentsList">
+        <p>No comments yet. Be the first to post one!</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 FadeBlack. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">X</a>
+      <a href="#">TikTok</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Wishlist functionality
+    function addToWishlist(item) {
+      alert(`${item} has been added to your wishlist!`);
+    }
+
+    // Review functionality
+    function submitReview(event) {
+      event.preventDefault();
+      const name = document.getElementById('reviewerName').value;
+      const content = document.getElementById('reviewContent').value;
+      const reviewsList = document.getElementById('reviewsList');
+      const review = document.createElement('p');
+      review.innerHTML = `<strong>${name}</strong>: ${content}`;
+      reviewsList.appendChild(review);
+      document.getElementById('reviewForm').reset();
+    }
+
+    // Comment functionality
+    function submitComment(event) {
+      event.preventDefault();
+      const name = document.getElementById('commenterName').value;
+      const content = document.getElementById('commentContent').value;
+      const commentsList = document.getElementById('commentsList');
+      const comment = document.createElement('p');
+      comment.innerHTML = `<strong>${name}</strong>: ${content}`;
+      commentsList.appendChild(comment);
+      document.getElementById('commentForm').reset();
+    }
+  </script>
+</body>
+</html>
